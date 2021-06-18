@@ -5,8 +5,6 @@ const port = 3030;
 const path = require("path");
 app.use(express.static('public'));
 
-app.listen(3030,()=> console.log("servidor corriendo en http://localhost:"+ port));
-
 app.get("/baggage",(req,res) => res.sendFile(path.join(__dirname,"views","baggage.html")));
 
 app.get("/berners-lee",(req,res) => res.sendFile(path.join(__dirname,"views","berners-lee.html")));
@@ -22,6 +20,8 @@ app.get("/",(req,res) => res.sendFile(path.join(__dirname,"views","index.html"))
 app.get("/lovelace",(req,res) => res.sendFile(path.join(__dirname,"views","lovelace.html")));
 
 app.get("/turing",(req,res) => res.sendFile(path.join(__dirname,"views","turing.html")));
+
+app.listen(3030,()=> console.log("servidor corriendo en http://localhost:"+ port));
 
 
 
